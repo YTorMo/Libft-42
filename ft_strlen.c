@@ -6,13 +6,15 @@
 /*   By: ytoro-mo <ytoro-mo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 17:19:28 by ytoro-mo          #+#    #+#             */
-/*   Updated: 2022/04/19 11:59:58 by ytoro-mo         ###   ########.fr       */
+/*   Updated: 2022/04/20 12:15:19 by ytoro-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned long	ft_strlen(const char *s)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
-	unsigned long	i;
+	size_t	i;
 
 	i = 0;
 	while (s[i] != '\0')

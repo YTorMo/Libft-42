@@ -6,15 +6,17 @@
 /*   By: ytoro-mo <ytoro-mo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 13:53:38 by ytoro-mo          #+#    #+#             */
-/*   Updated: 2022/04/19 14:06:01 by ytoro-mo         ###   ########.fr       */
+/*   Updated: 2022/04/20 12:18:59 by ytoro-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned long	ft_strlcat(char *dest, char *src, unsigned long size)
+#include "libft.h"
+
+size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
-	unsigned long	dest_count;
-	unsigned long	src_count;
-	unsigned long	ttl_count;
+	size_t	dest_count;
+	size_t	src_count;
+	size_t	ttl_count;
 
 	dest_count = 0;
 	while (dest[dest_count] != '\0')

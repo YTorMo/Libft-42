@@ -6,9 +6,11 @@
 /*   By: ytoro-mo <ytoro-mo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 10:47:11 by ytoro-mo          #+#    #+#             */
-/*   Updated: 2022/04/20 11:31:55 by ytoro-mo         ###   ########.fr       */
+/*   Updated: 2022/04/20 12:12:41 by ytoro-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

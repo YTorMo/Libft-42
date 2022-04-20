@@ -6,11 +6,13 @@
 /*   By: ytoro-mo <ytoro-mo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 11:53:17 by ytoro-mo          #+#    #+#             */
-/*   Updated: 2022/04/19 13:21:34 by ytoro-mo         ###   ########.fr       */
+/*   Updated: 2022/04/20 12:17:28 by ytoro-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dst, const void *src, unsigned long len)
+#include "libft.h"
+
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char		*d;
 	const char	*s;

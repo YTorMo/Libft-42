@@ -6,9 +6,11 @@
 /*   By: ytoro-mo <ytoro-mo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:08:58 by ytoro-mo          #+#    #+#             */
-/*   Updated: 2022/04/19 17:25:23 by ytoro-mo         ###   ########.fr       */
+/*   Updated: 2022/04/20 12:14:10 by ytoro-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

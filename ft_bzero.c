@@ -6,11 +6,13 @@
 /*   By: ytoro-mo <ytoro-mo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 11:35:01 by ytoro-mo          #+#    #+#             */
-/*   Updated: 2022/04/19 11:44:27 by ytoro-mo         ###   ########.fr       */
+/*   Updated: 2022/04/20 12:16:42 by ytoro-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, unsigned long n)
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*str;
 

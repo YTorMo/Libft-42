@@ -6,11 +6,13 @@
 /*   By: ytoro-mo <ytoro-mo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:20:02 by ytoro-mo          #+#    #+#             */
-/*   Updated: 2022/04/19 17:36:13 by ytoro-mo         ###   ########.fr       */
+/*   Updated: 2022/04/20 12:20:08 by ytoro-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memchr(const void *s, int c, unsigned long n)
+#include "libft.h"
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	void	*occur;
 	int		i;

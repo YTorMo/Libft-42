@@ -6,11 +6,13 @@
 /*   By: ytoro-mo <ytoro-mo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 11:08:36 by ytoro-mo          #+#    #+#             */
-/*   Updated: 2022/04/19 11:34:36 by ytoro-mo         ###   ########.fr       */
+/*   Updated: 2022/04/20 12:16:11 by ytoro-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *b, int c, unsigned long len)
+#include "libft.h"
+
+void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	*memo;
 
