@@ -1,42 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ytoro-mo <ytoro-mo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 11:53:17 by ytoro-mo          #+#    #+#             */
-/*   Updated: 2022/04/20 13:30:50 by ytoro-mo         ###   ########.fr       */
+/*   Created: 2022/04/20 13:43:32 by ytoro-mo          #+#    #+#             */
+/*   Updated: 2022/04/20 15:12:02 by ytoro-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_itoa(int n)
 {
-	char		*d;
-	const char	*s;
-	char		*lasts;
-	char		*lastd;
-
-	d = dst;
-	s = src;
-	if (len != 0 || dst != src)
-	{
-		if (d < s)
-		{
-			while (len--)
-			{
-				*d++ = *s++;
-			}
-		}
-		else
-		{
-			lasts = (char *)s + (len - 1);
-			lastd = d + (len - 1);
-			while (len--)
-				*lastd-- = *lasts--;
-		}
-	}
-	return (dst);
+	n = 0;
+	return ("ASDF");
 }
