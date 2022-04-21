@@ -6,7 +6,7 @@
 /*   By: ytoro-mo <ytoro-mo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 10:08:34 by ytoro-mo          #+#    #+#             */
-/*   Updated: 2022/04/20 12:20:56 by ytoro-mo         ###   ########.fr       */
+/*   Updated: 2022/04/20 17:56:59 by ytoro-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,24 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char	*ptr;
-	int		i;
+	size_t	i;
+	size_t	j;
 
-	ptr = 0;
-	if (*needle == '\0')
+	i = 0;
+	if (*needle == '\0' || haystack == needle)
 		return ((char *)haystack);
-	while (len-- && *haystack != '\0')
+	j = 0;
+	while (i < len && haystack[j] != '\0')
 	{
 		i = 0;
-		if (*haystack == needle[i])
-		{
-			while (needle[i] != '\0' && len--)
-			{
-				if (needle[i] != *haystack)
-					break ;
-				i++;
-				haystack++;
-			}
-			if (needle[i] == '\0')
-				return (ptr = (char *)haystack - i);
-		}
-		haystack++;
+		while (needle[i] != '\0' && haystack[j + i] != '\0'
+			&& needle[i] == haystack[j + i] && i + j < len)
+			i++;
+		if (needle[i] == '\0')
+			return ((char *)haystack + j);
+		j++;
 	}
-	return (ptr);
+	return (NULL);
 }
 
 /*#include <stdio.h>

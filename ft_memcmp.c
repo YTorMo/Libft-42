@@ -6,7 +6,7 @@
 /*   By: ytoro-mo <ytoro-mo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:37:50 by ytoro-mo          #+#    #+#             */
-/*   Updated: 2022/04/20 12:20:31 by ytoro-mo         ###   ########.fr       */
+/*   Updated: 2022/04/20 16:45:01 by ytoro-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	while (*(unsigned char *)s1++ != '\0' && *(unsigned char *)s2++ != '\0'
-		&& n--)
+	if (s1 == s2 || n == 0)
+		return (0);
+	while (n--)
 	{
 		if (*(unsigned char *)s1 != *(unsigned char *)s2)
-			break ;
+			return (*(unsigned char *)s1 - *(unsigned char *)s2);
+		s1++;
+		s2++;
 	}
-	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+	return (0);
 }
 
 /*#include <stdio.h>
