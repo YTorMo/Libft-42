@@ -6,19 +6,73 @@
 /*   By: ytoro-mo <ytoro-mo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 13:42:31 by ytoro-mo          #+#    #+#             */
-/*   Updated: 2022/04/20 15:15:33 by ytoro-mo         ###   ########.fr       */
+/*   Updated: 2022/04/21 17:29:06 by ytoro-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+size_t	ft_count_wrds(const char *s, char c);
+char	*ft_putwrds(const char *s, size_t start, size_t end);
+
 char	**ft_split(char const *s, char c)
 {
-	char	**ptr;
+	char	**wrds;
+	size_t	i;
+	size_t	j;
+	int		start;
 
-	ptr = 0;
-	c = 0;
-	while (*s != '\0')
+	wrds = malloc((ft_count_wrds(s, c) + 1) * sizeof(char *));
+	if (!wrds || !s)
+		return (NULL);
+	i = 0;
+	j = 0;
+	start = -1;
+	while (i <= ft_strlen(s))
+	{
+		if (s[i] != c && start < 0)
+			start = i;
+		else if ((s[i] == c || i == ft_strlen(s)) && start >= 0)
+		{
+			wrds[j++] = ft_putwrds(s, start, i);
+			start = -1;
+		}
+		i++;
+	}
+	wrds[j] = 0;
+	return (wrds);
+}
+
+size_t	ft_count_wrds(const char *s, char c)
+{
+	size_t	cnt_wrds;
+	int		find;
+
+	cnt_wrds = 0;
+	find = 0;
+	while (*s)
+	{
+		if (*s != c && !find)
+		{
+			cnt_wrds++;
+			find = 1;
+		}
+		else if (*s == c)
+			find = 0;
 		s++;
-	return (ptr);
+	}
+	return (cnt_wrds);
+}
+
+char	*ft_putwrds(const char *s, size_t start, size_t end)
+{
+	char	*wrd;
+	size_t	i;
+
+	wrd = malloc((end - start + 1));
+	i = 0;
+	while (start < end)
+		wrd[i++] = s[start++];
+	wrd[i] = 0;
+	return (wrd);
 }
