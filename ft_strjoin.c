@@ -6,7 +6,7 @@
 /*   By: ytoro-mo <ytoro-mo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 13:40:37 by ytoro-mo          #+#    #+#             */
-/*   Updated: 2022/04/20 15:09:33 by ytoro-mo         ###   ########.fr       */
+/*   Updated: 2022/04/21 11:41:39 by ytoro-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,28 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	while (*s1 != '\0' && *s2++ != '\0')
+	char	*join;
+	char	*memo;
+	size_t	len;
+
+	join = (char *)malloc(sizeof(s1) + sizeof(s2));
+	if (!join)
+		return (NULL);
+	memo = join;
+	len = ft_strlen(s1);
+	while (len--)
+	{
+		*memo = *s1;
+		memo++;
 		s1++;
-	return ("ASDF");
+	}
+	len = ft_strlen(s2);
+	while (len--)
+	{
+		*memo = *s2;
+		memo++;
+		s2++;
+	}
+	*memo = 0;
+	return (join);
 }
