@@ -6,7 +6,7 @@
 /*   By: ytoro-mo <ytoro-mo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 13:47:50 by ytoro-mo          #+#    #+#             */
-/*   Updated: 2022/04/20 15:14:45 by ytoro-mo         ###   ########.fr       */
+/*   Updated: 2022/04/22 11:44:22 by ytoro-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	s = 0;
-	fd = 0;
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
