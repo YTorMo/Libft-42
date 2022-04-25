@@ -6,14 +6,14 @@
 /*   By: ytoro-mo <ytoro-mo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 13:42:31 by ytoro-mo          #+#    #+#             */
-/*   Updated: 2022/04/25 16:36:41 by ytoro-mo         ###   ########.fr       */
+/*   Updated: 2022/04/25 16:46:58 by ytoro-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_count_wrds(const char *s, char c);
-char	*ft_putwrds(const char *s, size_t start, size_t end);
+static size_t	ft_count_wrds(const char *s, char c);
+static char		*ft_putwrds(const char *s, size_t start, size_t end);
 
 char	**ft_split(char const *s, char c)
 {

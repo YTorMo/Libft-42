@@ -6,14 +6,14 @@
 /*   By: ytoro-mo <ytoro-mo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 13:48:35 by ytoro-mo          #+#    #+#             */
-/*   Updated: 2022/04/25 16:36:17 by ytoro-mo         ###   ########.fr       */
+/*   Updated: 2022/04/25 16:46:43 by ytoro-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_exp(int i);
-void	ft_numb_to_char(long nb, int pos_neg, int fb);
+static int	ft_exp(int i);
+static void	ft_numb_to_char(long nb, int pos_neg, int fb);
 
 void	ft_putnbr_fd(int n, int fd)
 {
