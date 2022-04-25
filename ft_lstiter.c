@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ytoro-mo <ytoro-mo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 13:31:48 by ytoro-mo          #+#    #+#             */
-/*   Updated: 2022/04/25 08:56:09 by ytoro-mo         ###   ########.fr       */
+/*   Created: 2022/04/24 18:46:59 by ytoro-mo          #+#    #+#             */
+/*   Updated: 2022/04/25 09:49:25 by ytoro-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	char	*dup;
-
-	dup = (char *)malloc(ft_strlen(s1) + 1);
-	if (!dup)
-		return (NULL);
-	ft_strlcpy(dup, s1, ft_strlen(s1) + 1);
-	return (dup);
+	if (lst)
+	{
+		while (lst)
+		{
+			f(lst->content);
+			lst = lst->next;
+		}
+	}
 }

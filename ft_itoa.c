@@ -6,7 +6,7 @@
 /*   By: ytoro-mo <ytoro-mo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 13:43:32 by ytoro-mo          #+#    #+#             */
-/*   Updated: 2022/04/22 10:36:16 by ytoro-mo         ###   ########.fr       */
+/*   Updated: 2022/04/25 08:51:44 by ytoro-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_itoa(int n)
 	long	long_n;
 
 	size = ft_num_size(n);
-	num = malloc((size));
+	num = malloc(size + 1);
 	if (!num)
 		return (NULL);
 	num[size--] = 0;

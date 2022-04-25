@@ -6,7 +6,7 @@
 /*   By: ytoro-mo <ytoro-mo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 11:53:17 by ytoro-mo          #+#    #+#             */
-/*   Updated: 2022/04/20 13:30:50 by ytoro-mo         ###   ########.fr       */
+/*   Updated: 2022/04/25 08:55:45 by ytoro-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	d = dst;
 	s = src;
+	if (!d && !s)
+		return (NULL);
 	if (len != 0 || dst != src)
 	{
 		if (d < s)
 		{
 			while (len--)
-			{
 				*d++ = *s++;
-			}
 		}
 		else
 		{

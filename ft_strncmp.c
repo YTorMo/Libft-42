@@ -6,26 +6,28 @@
 /*   By: ytoro-mo <ytoro-mo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 12:54:32 by ytoro-mo          #+#    #+#             */
-/*   Updated: 2022/04/20 12:19:36 by ytoro-mo         ###   ########.fr       */
+/*   Updated: 2022/04/25 08:56:33 by ytoro-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(char *s1, char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
 	i = 0;
-	while (i < n && (s1[i] != '\0' && s2[i] != '\0'))
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	while (i < n && (str1[i] != '\0' && str2[i] != '\0'))
 	{
-		if (s1[i] > s2[i])
-			return (s1[i] - s2[i]);
-		else if (s1[i] < s2[i])
-			return (s1[i] - s2[i]);
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
 		i++;
 	}
 	if (i != n)
-		return (s1[i] - s2[i]);
+		return (str1[i] - str2[i]);
 	return (0);
 }

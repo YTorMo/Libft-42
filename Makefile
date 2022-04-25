@@ -5,88 +5,84 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ytoro-mo <ytoro-mo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/04/20 13:20:46 by ytoro-mo          #+#    #+#              #
-#    Updated: 2022/04/20 15:20:29 by ytoro-mo         ###   ########.fr        #
+#    Created: 2022/04/25 13:17:15 by ytoro-mo          #+#    #+#              #
+#    Updated: 2022/04/25 16:04:42 by ytoro-mo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+FILES_M =	ft_atoi \
+			ft_bzero \
+			ft_calloc \
+			ft_isalnum \
+			ft_isalpha \
+			ft_isascii \
+			ft_isdigit \
+			ft_isprint \
+			ft_itoa \
+			ft_memchr \
+			ft_memcmp \
+			ft_memcpy \
+			ft_memmove \
+			ft_memset \
+			ft_putchar_fd \
+			ft_putendl_fd \
+			ft_putnbr_fd \
+			ft_putstr_fd \
+			ft_split \
+			ft_strchr \
+			ft_strdup \
+			ft_striteri \
+			ft_strjoin \
+			ft_strlcat \
+			ft_strlcpy \
+			ft_strlen \
+			ft_strmapi \
+			ft_strncmp \
+			ft_strnstr \
+			ft_strrchr \
+			ft_strtrim \
+			ft_substr \
+			ft_tolower \
+			ft_toupper \
+
+FILES_B =	ft_lstadd_back \
+			ft_lstadd_front \
+			ft_lstclear \
+			ft_lstdelone \
+			ft_lstiter \
+			ft_lstlast \
+			ft_lstmap \
+			ft_lstnew \
+			ft_lstsize \
+
 NAME = libft.a
 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-AR = ar rcs
+GCC = gcc
+
 RM = rm -f
 
-FILES = ft_memset \
-		ft_bzero \
-		ft_memcpy \
-		ft_memmove \
-		ft_memchr \
-		ft_memcmp \
-		ft_strlen \
-		ft_strlcpy \
-		ft_strlcat \
-		ft_strchr \
-		ft_strrchr \
-		ft_strnstr \
-		ft_strncmp \
-		ft_atoi \
-		ft_isalpha \
-		ft_isdigit \
-		ft_isalnum \
-		ft_isascii \
-		ft_isprint \
-		ft_toupper \
-		ft_tolower \
-		ft_calloc \
-		ft_strdup \
-		ft_substr \
-		ft_strjoin \
-		ft_strtrim \
-		ft_split \
-		ft_itoa \
-		ft_strmapi \
-		ft_putchar_fd \
-		ft_putstr_fd \
-		ft_putendl_fd \
-		ft_putnbr_fd \
+AR = ar rcs
 
-FILES_B = 	ft_lstnew \
-	  		ft_lstadd_front \
-	  		ft_lstsize \
-	  		ft_lstlast \
-	  		ft_lstadd_back \
-	  		ft_lstdelone \
-	  		ft_lstclear \
-	  		ft_lstiter \
-	  		ft_lstmap
-
-SRCS_DIR = ./
-SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
-SRCS_B = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES_B)))
+CFLAGS = -Wall -Wextra -Werror
 
 OBJS_DIR = ./
-OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
-OBJS_B = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B)))
+OBJ_M = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_M)))
+OBJ_B = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B)))
 
+$(NAME):	${OBJ_M}
+			${AR} ${NAME} ${OBJ_M}
 
-.c.o: $(SRCS)
-	$(CC) $(CFLAGS) -c -o $@ $<
+all:		${NAME}
 
-$(NAME): $(OBJS)
-	$(AR) $@ $^
-
-bonus: $(OBJS_B)
-	$(AR) $(NAME) $^
-
-all: $(NAME)
+bonus:		${OBJ_B}
+			${AR} ${NAME} ${OBJ_B}
 
 clean:
-	$(RM) $(OBJS) $(OBJS_B)
+			${RM} ${OBJ_M} ${OBJ_B}
 
-fclean: clean
-	$(RM) $(NAME)
+fclean:		clean
+			${RM} ${NAME}
 
-re: clean all
+re:			fclean all
 
-.PHONY: bonus all clean fclean re
+.PHONY:		all clean fclean re
