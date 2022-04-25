@@ -6,7 +6,7 @@
 /*   By: ytoro-mo <ytoro-mo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 13:42:31 by ytoro-mo          #+#    #+#             */
-/*   Updated: 2022/04/21 17:29:06 by ytoro-mo         ###   ########.fr       */
+/*   Updated: 2022/04/25 16:36:41 by ytoro-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	**ft_split(char const *s, char c)
 	return (wrds);
 }
 
-size_t	ft_count_wrds(const char *s, char c)
+static size_t	ft_count_wrds(const char *s, char c)
 {
 	size_t	cnt_wrds;
 	int		find;
@@ -64,7 +64,7 @@ size_t	ft_count_wrds(const char *s, char c)
 	return (cnt_wrds);
 }
 
-char	*ft_putwrds(const char *s, size_t start, size_t end)
+static char	*ft_putwrds(const char *s, size_t start, size_t end)
 {
 	char	*wrd;
 	size_t	i;

@@ -6,7 +6,7 @@
 /*   By: ytoro-mo <ytoro-mo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 13:48:35 by ytoro-mo          #+#    #+#             */
-/*   Updated: 2022/04/22 15:47:31 by ytoro-mo         ###   ########.fr       */
+/*   Updated: 2022/04/25 16:36:17 by ytoro-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 }
 
-int	ft_exp(int i)
+static int	ft_exp(int i)
 {
 	int	exp_10;
 
@@ -50,7 +50,7 @@ int	ft_exp(int i)
 	return (exp_10);
 }
 
-void	ft_numb_to_char(long nb, int pos_neg, int fd)
+static void	ft_numb_to_char(long nb, int pos_neg, int fd)
 {
 	int		i;
 	long	exp_nb;

@@ -6,7 +6,7 @@
 /*   By: ytoro-mo <ytoro-mo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 13:43:32 by ytoro-mo          #+#    #+#             */
-/*   Updated: 2022/04/25 08:51:44 by ytoro-mo         ###   ########.fr       */
+/*   Updated: 2022/04/25 16:35:11 by ytoro-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_itoa(int n)
 	return (num);
 }
 
-size_t	ft_num_size(int n)
+static size_t	ft_num_size(int n)
 {
 	size_t	i;
 	size_t	n_pos;
